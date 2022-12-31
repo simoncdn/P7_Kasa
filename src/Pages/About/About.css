@@ -1,0 +1,13 @@
+.about-container{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 100px;
+}
+
+.dropdown-bloc{
+    width: 80%;
+}

@@ -1,0 +1,35 @@
+.header{
+    color: #FF6060;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.navbar{
+    display: flex;
+    width: 200px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-transform: none;
+    list-style-type: none;
+}
+
+.navbar a:visited{
+    color: #FF6060;
+}
+
+.navbar a:hover{
+    text-decoration: underline;
+}
+
+.unselected{
+    text-decoration: none;
+}
+.selected{
+    text-decoration: underline;
+}
