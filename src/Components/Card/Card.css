@@ -1,38 +1,24 @@
 .card-container{
     width: 100%;
-    margin-top: 40px;
-    padding: 50px;
     margin-bottom: 200px;
-}
-
-.card-container ul{
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    grid-gap: 60px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
 }
-
-.card-container ul li{
-    width: 100%;
-    height: 250px;
-    list-style-type: none;
+.card-container .card{
+    width: 340px;
+    height: 340px;
+    margin: 1%;
     border-radius: 10px;
     display: flex;
     align-items: flex-end;
-    position: relative;
     overflow: hidden;
-    cursor: pointer;
-    transition: all 0.4s ease-out;
-}
-.card-container li:hover{
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.4s ease-out;
+    position: relative;
 }
 
 .card-linearGradient{
+    cursor: pointer;
     width: 100%;
     height: 100%;
     background: linear-gradient( 180deg, #ffff 0%, rgb(0, 0, 0) 100%);
@@ -43,8 +29,9 @@
 .card-title{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     height: 30%;
-    padding: 20px;
+    padding: 30px;
     position: relative;
     align-items: center;
     justify-content: left;
