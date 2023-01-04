@@ -5,6 +5,7 @@
     position: relative;
     justify-content: space-between;
     margin-top: 40px;
+    background-color: red;
 }
 
 .navbar{
@@ -17,6 +18,7 @@
 .navbar a {
     text-transform: none;
     list-style-type: none;
+    font-size: 20px;
 }
 
 .navbar a:visited{
@@ -34,8 +36,13 @@
     text-decoration: underline;
 }
 
-@media screen and (max-width: 767px) {
-    .header{
-        color: blue;
+@media screen and (max-width: 1024px) {
+    .navbar a {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .navbar a {
+        font-size: 12px;
     }
 }

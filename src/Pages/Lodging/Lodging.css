@@ -72,12 +72,3 @@
 .dropdown{
     width: 47%;
 }
-.dropdown p, .dropdown ul{
-    min-height: 200px;
-    font-size: 18px;
-}
-.dropdown li{
-    color: #FF6060;
-    padding: 3px 0px;
-    list-style-type: none;
-}

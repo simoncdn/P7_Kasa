@@ -4,7 +4,7 @@ import BtnSlider from './BtnSlider'
 
 export default function Slider(props) {
 
-    const [dataSlider, setDataSlider] = useState(props.children)
+    const [dataSlider, setDataSlider] = useState(props.images)
     const [slideAnim, setSlideAnim] = useState({
         index: 1,
         inProgress: false
@@ -32,7 +32,7 @@ export default function Slider(props) {
             setSlideAnim({index: slideAnim.index - 1, inProgress: true})
 
             setTimeout( () => {
-                setSlideAnim({index: slideAnim.index =1, inProgress: false})
+                setSlideAnim({index: slideAnim.index - 1, inProgress: false})
             }, 400)
         }
         else if(slideAnim.index === 1 && !slideAnim.inProgress){
@@ -46,10 +46,10 @@ export default function Slider(props) {
 
   return (
     <div className='slider-container'>
-        {dataSlider.map((obj, index) => {
+        {dataSlider.map((image, index) => {
             return (
                 <div
-                key={obj}
+                key={index}
                 className={slideAnim.index === index + 1 ?
                 "slide active-anim" : "slide"}
                 >

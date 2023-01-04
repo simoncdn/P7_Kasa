@@ -11,3 +11,13 @@
 .dropdown-bloc{
     width: 80%;
 }
+@media screen and (max-width: 1024px) {
+    .about-container{
+        padding: 0 50px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .about-container{
+        padding: 0 20px;
+    }
+}

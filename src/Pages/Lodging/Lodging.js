@@ -21,7 +21,8 @@ export default function Lodging() {
         setData(result.data);
       };
       fetchData();
-  })
+      
+  },[])
 
   return (
     <div className='lodging-container'>
@@ -32,9 +33,8 @@ export default function Lodging() {
               <div 
               key={item.id}
               className="lodging-content">
-                <div className="lodging-caroussel">
-                  <Slider>{item.pictures}</Slider>
-                </div>
+                <Slider images={item.pictures}/>
+
                 <div className="lodging-info-container">
                   <div className="lodging-info-left">
                     <h2>{item.title}</h2>
@@ -49,32 +49,29 @@ export default function Lodging() {
                       </ul>
                     </div>
                   </div>
+
                   <div className="lodging-info-right">
                     <div className="lodging-info-right-host">
                       <p>{item.host.name}</p>
                       <img src={`${item.host.picture}`} alt="host img"/>
                     </div>
-                    <Rating>
-                      {item.rating}
-                    </Rating>
+                    <Rating rating={item.rating} />
                   </div>
                 </div>
                 <div className="dropdowns">
                   <div className='dropdown'>
-                    <Dropdown>
-                      <span>Description</span>
-                      <p>{item.description}</p>
-                    </Dropdown>
+                    <Dropdown 
+                    title='Description' 
+                    content={item.description} />
                   </div>
                   <div className='dropdown'>
-                    <Dropdown>
-                      <span>Équipements</span>
-                        <ul>
-                          {item.equipments.map(item => (
-                            <li key={item}>{item}</li>
-                          ))}
-                        </ul>
-                    </Dropdown>
+                    <Dropdown
+                    title='Équipements'
+                    content={
+                      item.equipments.map(item => (
+                        <p key={item}>{item}</p>
+                      ))}
+                    />
                   </div>
                 </div>
               </div>

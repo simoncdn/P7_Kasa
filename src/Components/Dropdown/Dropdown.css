@@ -17,7 +17,7 @@
     cursor: pointer;
 }
 
-.dropdown-title span{
+.dropdown-title h2{
     color: white;
     font-size: 24px;
 }

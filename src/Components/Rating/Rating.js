@@ -1,23 +1,25 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import './Rating.css'
 
 export default function Rating(props) {
-
-    const ratingStars = parseInt([props.children]);
-    const [rate, setRate] = useState({
-        index: 1,
-        state: false
-    });
-
     const [test, setTest] = useState([false, false, false, false, false])
+    
+    useEffect( () => {
+        const ratingStars = parseInt([props.rating]);
+        const newRate = [...test];
 
-    const trueRate = () => {
-        for (let i = 0; i < ratingStars; i++) {
-            test[i] = true
-            //A REVOIR
+        const trueRate = () => {
+            for (let i = 0; i < ratingStars; i++) {
+
+                newRate[i] = true;
+                // console.log(newRate);
+                // A REVOIR
+            }
+            return setTest(newRate)
         }
-    }
-    trueRate()
+        trueRate()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     
   return (
     <div className="rate-container">
