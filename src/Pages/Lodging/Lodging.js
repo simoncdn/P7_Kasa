@@ -27,12 +27,12 @@ export default function Lodging() {
   return (
     <div className='lodging-container'>
       <Header/>
+      <div className="lodging-content">
         {data.map(item => {
           if(item.id === id){
             return (
               <div 
-              key={item.id}
-              className="lodging-content">
+              key={item.id}>
                 <Slider images={item.pictures}/>
 
                 <div className="lodging-info-container">
@@ -78,6 +78,7 @@ export default function Lodging() {
             )
           }
         })}
+        </div>
         <Footer />
     </div>
   )

@@ -18,6 +18,7 @@ export default function Home() {
         '/lodging.json'
       );
       setData(result.data);
+      console.log(result.data);
     };
     fetchData();
   },[])
@@ -30,16 +31,15 @@ export default function Home() {
         title="Chez vous, partout et ailleurs"
          />
         <div className="card-container">
-          {data.map(item => (
+          {data.map((item, index) => (
             <Card
-            key={item.id}
+            key={index}
             id={item.id}
             title={item.title}
             cover={item.cover}
             />
           ))}
         </div>
-        <Card />
         <Footer />
     </div>
   )

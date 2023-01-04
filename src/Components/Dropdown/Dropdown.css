@@ -42,3 +42,28 @@
     transform: rotate(180deg);
 
 }
+
+@media screen and (max-width: 1024px) {
+    
+}
+@media screen and (max-width: 768px) {
+    .dropdown-container{
+        margin-bottom: 20px;
+    }
+    .dropdown-title {
+        height: 30px;
+        padding: 5px 11px;
+    }
+    .dropdown-title h2{
+        font-size: 13px;
+    }
+    .dropdown-title img{
+        width: 15px;
+    }
+    .dropdown-txt{
+        padding: 20px 11px;
+    }
+    .dropdown-txt p{
+        font-size: 12px;
+    }
+}

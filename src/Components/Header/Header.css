@@ -5,12 +5,14 @@
     position: relative;
     justify-content: space-between;
     margin-top: 40px;
-    background-color: red;
+    padding: 0px 100px;
 }
-
+.logo-container img{
+    width: 100%;
+}
 .navbar{
     display: flex;
-    width: 200px;
+    width: auto;
     justify-content: space-between;
     align-items: center;
 }
@@ -18,7 +20,8 @@
 .navbar a {
     text-transform: none;
     list-style-type: none;
-    font-size: 20px;
+    font-size: 24px;
+    margin-left: 100px;
 }
 
 .navbar a:visited{
@@ -37,12 +40,25 @@
 }
 
 @media screen and (max-width: 1024px) {
+    .header{
+        padding: 0 50px;
+    }
     .navbar a {
         font-size: 20px;
+        margin-left: 70px;
     }
 }
 @media screen and (max-width: 768px) {
+    .header{
+        margin-top: 20px;
+        padding: 0 20px;
+    }
+    .logo-container img{
+        width: 80%;
+    }
     .navbar a {
+        width: 50px;
         font-size: 12px;
+        margin-left: 30px;
     }
 }

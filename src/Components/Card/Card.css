@@ -19,7 +19,9 @@
     opacity: 0.2;
     position: absolute;
 }
-
+.card-linearGradient:nth-child(10){
+    display: none;
+}
 .card-title{
     width: 100%;
     display: flex;

@@ -51,4 +51,23 @@
     transform: translateY(-50%);
 }
   
-  
+@media screen and (max-width: 1024px) {
+    
+}
+@media screen and (max-width: 768px) {
+    .slider-container{
+        height: 255px;
+        margin: 20px 0px;
+    }
+    .btn-slide {
+        width: 30px;
+        height: 30px;
+    }
+    .prev {
+        left: 10px;
+    }
+    .next {
+        right: 10px;
+    }
+
+}
