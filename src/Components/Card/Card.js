@@ -1,15 +1,15 @@
 import React from 'react';
 import './Card.css';
 
-export default function Card(props) {
+export default function Card({id, cover, title}) {
   return (
     <a
-      href={`logements/${props.id}`}
+      href={`logements/${id}`}
       className='card'
-      style={{ backgroundImage: `url(${props.cover})`,backgroundSize: 'cover'}}>
+      style={{ backgroundImage: `url(${cover})`,backgroundSize: 'cover'}}>
         <div className="card-linearGradient"></div>
         <div className="card-title">
-          <h2>{props.title}</h2>
+          <h2>{title}</h2>
         </div>
     </a>
   )

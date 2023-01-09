@@ -5,7 +5,6 @@ import './Lodging.css'
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Dropdown from '../../Components/Dropdown/Dropdown'
-import Rating from '../../Components/Rating/Rating'
 import Slider from '../../Components/Slider/Slider'
 import LodgingInfo from '../../Components/LodgingInfo/LodgingInfo';
 
@@ -45,7 +44,7 @@ export default function Lodging() {
                   }}
                   rating={item.rating}
                 />
-                
+
                 <div className="dropdowns">
                   <div className='dropdown'>
                     <Dropdown 

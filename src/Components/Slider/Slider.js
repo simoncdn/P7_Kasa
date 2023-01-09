@@ -13,9 +13,10 @@ export default function Slider({ images }) {
         }
         
         setIsTransitionInProgress(true);
-        
+
         setSlideIndex(prevIndex => {
             if (direction === 'prev') {
+                console.log(images.length);
                 return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
             }
             

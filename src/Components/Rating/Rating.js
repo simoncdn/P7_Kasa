@@ -1,12 +1,12 @@
 import React,{useEffect, useState} from 'react'
 import './Rating.css'
 
-export default function Rating(props) {
+export default function Rating({rating}) {
 
     const [test, setTest] = useState([false, false, false, false, false])
     
     useEffect( () => {
-        const ratingStars = parseInt([props.rating]);
+        const ratingStars = parseInt([rating]);
         const newRate = [...test];
 
             for (let i = 0; i < ratingStars; i++) {
@@ -14,7 +14,7 @@ export default function Rating(props) {
             };
             setTest(newRate)
             // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[props.rating])
+    },[rating])
     
   return (
     <div className="rate-container">

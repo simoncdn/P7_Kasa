@@ -1,12 +1,12 @@
 import React from 'react'
 import './Banner.css'
 
-export default function Banner(props) {
+export default function Banner({image, title}) {
   return (
     <div className="banner">
         <div className="background">
-          <img src={`${props.image}`} alt="" />
-          <h2>{props.title}</h2>
+          <img src={`${image}`} alt="" />
+          <h2>{title}</h2>
         </div>
     </div>
   )
