@@ -7,6 +7,7 @@ import Footer from '../../Components/Footer/Footer'
 import Dropdown from '../../Components/Dropdown/Dropdown'
 import Rating from '../../Components/Rating/Rating'
 import Slider from '../../Components/Slider/Slider'
+import LodgingInfo from '../../Components/LodgingInfo/LodgingInfo';
 
 export default function Lodging() {
 
@@ -28,36 +29,23 @@ export default function Lodging() {
     <div className='lodging-container'>
       <Header/>
       <div className="lodging-content">
-        {data.map(item => {
-          if(item.id === id){
+        {data.filter(item => item.id === id).map(item => {
             return (
               <div 
               key={item.id}>
                 <Slider images={item.pictures}/>
 
-                <div className="lodging-info-container">
-                  <div className="lodging-info-left">
-                    <h2>{item.title}</h2>
-                    <p>{item.location}</p>
-                    <div className='tags-container'>
-                      <ul>
-                        {item.tags.map(element => (
-                          <li 
-                          key={element}
-                          className='tag'>{element}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="lodging-info-right">
-                    <div className="lodging-info-right-host">
-                      <p>{item.host.name}</p>
-                      <img src={`${item.host.picture}`} alt="host img"/>
-                    </div>
-                    <Rating rating={item.rating} />
-                  </div>
-                </div>
+                <LodgingInfo 
+                  title={item.title}
+                  location={item.location}
+                  tags={item.tags}
+                  host={{
+                    name: `${item.host.name}`,
+                    picture: `${item.host.picture}`
+                  }}
+                  rating={item.rating}
+                />
+                
                 <div className="dropdowns">
                   <div className='dropdown'>
                     <Dropdown 
@@ -76,8 +64,8 @@ export default function Lodging() {
                 </div>
               </div>
             )
-          }
-        })}
+          })
+        }
         </div>
         <Footer />
     </div>

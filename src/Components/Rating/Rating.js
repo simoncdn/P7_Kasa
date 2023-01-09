@@ -2,27 +2,23 @@ import React,{useEffect, useState} from 'react'
 import './Rating.css'
 
 export default function Rating(props) {
+
     const [test, setTest] = useState([false, false, false, false, false])
     
     useEffect( () => {
         const ratingStars = parseInt([props.rating]);
         const newRate = [...test];
 
-        const trueRate = () => {
             for (let i = 0; i < ratingStars; i++) {
-
                 newRate[i] = true;
-                // console.log(newRate);
-                // A REVOIR
-            }
-            return setTest(newRate)
-        }
-        trueRate()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[])
+            };
+            setTest(newRate)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[props.rating])
     
   return (
     <div className="rate-container">
+        
         {test.map((rate, index) => {
             return (
                 <svg
@@ -36,3 +32,11 @@ export default function Rating(props) {
     </div>
   )
 }
+
+
+// .prettierrc
+// {
+//     "singleQuote": true,
+//     "trailingComma": "all",
+//     "arrowParens": "avoid"
+//   }
