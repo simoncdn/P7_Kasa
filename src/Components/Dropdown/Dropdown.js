@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import {useState} from 'react'
 import './Dropdown.css'
 
 export default function Dropdown({title, content}) {
