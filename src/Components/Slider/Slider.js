@@ -2,63 +2,46 @@ import {useState} from 'react'
 import './Slider.css'
 import BtnSlider from './BtnSlider'
 
-export default function Slider(props) {
+export default function Slider({ images }) {
 
-    const [dataSlider, setDataSlider] = useState(props.images)
-    const [slideAnim, setSlideAnim] = useState({
-        index: 1,
-        inProgress: false
-    })
+    const [slideIndex, setSlideIndex] = useState(0)
+    const [isTransitionInProgress, setIsTransitionInProgress] = useState(false)
 
-    const nextSlide = () => {
-        if(slideAnim.index !== dataSlider.length && !slideAnim.inProgress){
-            setSlideAnim({index: slideAnim.index + 1, inProgress: true})
-
-            setTimeout(() => {
-                setSlideAnim({index: slideAnim.index + 1, inProgress: false})
-            },400);
+    const changeSlide = (direction) => {
+        if (isTransitionInProgress) {
+            return;
         }
-        else if(slideAnim.index === dataSlider.length && !slideAnim.inProgress){
-            setSlideAnim({index: 1, inProgress: true})
+        
+        setIsTransitionInProgress(true);
+        
+        setSlideIndex(prevIndex => {
+            if (direction === 'prev') {
+                return prevIndex === 0 ? images.length - 1 : prevIndex - 1;
+            }
+            
+            return prevIndex === images.length - 1 ? 0 : prevIndex + 1;
+        });
 
-            setTimeout(() => {
-                setSlideAnim({index: 1, inProgress: false})
-            },400);
-        }
-    }
-
-    const prevSlide = () => {
-        if(slideAnim.index !== 1 && !slideAnim.inProgress){
-            setSlideAnim({index: slideAnim.index - 1, inProgress: true})
-
-            setTimeout( () => {
-                setSlideAnim({index: slideAnim.index - 1, inProgress: false})
-            }, 400)
-        }
-        else if(slideAnim.index === 1 && !slideAnim.inProgress){
-            setSlideAnim({index: dataSlider.length, inProgress: true})
-
-            setTimeout( () => {
-                setSlideAnim({index: dataSlider.length, inProgress: false})
-            }, 400)
-        }
+        setTimeout(() => {
+            setIsTransitionInProgress(false);
+        }, 400);
     }
 
   return (
     <div className='slider-container'>
-        {dataSlider.map((image, index) => {
+        {images.map((image, index) => {
             return (
                 <div
                 key={index}
-                className={slideAnim.index === index + 1 ?
+                className={slideIndex === index ?
                 "slide active-anim" : "slide"}
                 >
-                    <img src={`${dataSlider[index]}`} alt="" />
+                    <img src={`${image}`} alt="" />
                 </div>
             )
         })}
-        <BtnSlider moveSlide={nextSlide} direction={"next"}/>
-        <BtnSlider moveSlide={prevSlide} direction={"prev"}/>
+        <BtnSlider moveSlide={() => changeSlide('next')} direction={"next"}/>
+        <BtnSlider moveSlide={() => changeSlide('prev')} direction={"prev"}/>
     </div>
   )
 }
