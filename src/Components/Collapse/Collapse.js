@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import './Dropdown.css'
+import './Collapse.css'
 
 export default function Dropdown({title, content}) {
     const [toggle, setToggle] = useState(true);
@@ -9,14 +9,14 @@ export default function Dropdown({title, content}) {
     }
 
   return (
-    <div className='dropdown-container'>
+    <div className='collapse-container'>
         <div 
         onClick={foo}
-        className="dropdown-title">
+        className="collapse-title">
             <h2>{title}</h2>
             <img src="/Images/downArrow.svg" alt="arrow" className={toggle? null : "active-arrow"}/>
         </div>
-        <div className={toggle ? "dropdown-txt" : "dropdown-txt active-txt"}>
+        <div className={toggle ? "collapse-txt" : "collapse-txt active-txt"}>
             {content}
         </div>
     </div>

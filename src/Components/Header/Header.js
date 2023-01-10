@@ -1,5 +1,5 @@
 import './Header.css'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 
 export default function Header() {
   const location = useLocation();
@@ -24,14 +24,17 @@ export default function Header() {
       <div className="navbar">
         {arrNav.map((item, index) => {
             return (
-            <a
-            className={location.pathname === item.path ? "selected" : "unselected"}
-            key={index}
-            id={`${item.id}`}
-            href={`${item.path}`}>
-            {item.label}</a>
+
+              <Link
+              className={location.pathname === item.path ? "selected" : "unselected"}
+              key={index}
+              id={`${item.id}`}
+              to={`${item.path}`}>
+              {item.label}
+              </Link>
+
             )
-          })}
+        })}
       </div>
 
     </div>
